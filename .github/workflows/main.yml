@@ -2,7 +2,8 @@ name: Send emails daily
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 22 * * *'
+    # Run daily at 22:17 UTC, away from the top-of-hour scheduling peak.
+    - cron: '17 22 * * *'
 
 jobs:
   calculate-and-send:
